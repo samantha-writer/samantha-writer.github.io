@@ -38,17 +38,6 @@ post_class: -templatepost
                 </div>
                 {% endif %}
 
-                <!-- Post Title -->
-                <h1 class="posttitle">{{ page.title }}</h1>
-
-            </div>
-
-            <!-- Adsense if enabled from _config.yml (change your pub id and slot) -->
-            {% if site.adsense == "enabled" %}
-                {% include adsense-under-header.html %}
-            {% endif %}
-            <!-- End Adsense -->
-
                  <!-- Post Categories -->
             <div class="after-post-cats">
                 <ul class="tags mb-4">
@@ -61,6 +50,17 @@ post_class: -templatepost
                 </ul>
             </div>
             <!-- End Categories -->
+                
+                <!-- Post Title -->
+                <h1 class="posttitle">{{ page.title }}</h1>
+
+            </div>
+
+            <!-- Adsense if enabled from _config.yml (change your pub id and slot) -->
+            {% if site.adsense == "enabled" %}
+                {% include adsense-under-header.html %}
+            {% endif %}
+            <!-- End Adsense -->
             
             <!-- Post Featured Image -->
             {% if page.image %}
