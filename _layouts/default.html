@@ -30,6 +30,17 @@
   gtag('js', new Date());
 
   gtag('config', '{{site.google_analytics}}');
+
+
+  document.oncontextmenu = new Function("return false"); //마우스 오른쪽 메뉴창 막기
+  document.ondragstart = new Function("return false"); //왼쪽 마우스로 이미지 드래그 막기
+  document.onselectstart = new Function("return false"); //왼쪽 마우스 문자 드래그 막기
+
+  document.onkeydown = new Function("return false"); //키보드 단축키 복사(ctrl+c) 막기
+
+  // 또는 한줄로 작성
+
+  document.oncontextmenu = document.ondragstart = document.onselectstart = document.onkeydown = new Function("return false");
 </script>
 {% endif %}
 
