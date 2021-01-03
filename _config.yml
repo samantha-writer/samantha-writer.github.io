@@ -1,7 +1,7 @@
 # Site
 name: "Samantha writer"
 title: "Samantha writer"
-description: "writer.samantha의 공간"
+description: ""
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/logo.png'
 baseurl: /blog
