@@ -1,11 +1,11 @@
 # Site
-name: "Samantha.her.creator"
-title: "Samantha.her"
-description: "creator samantha의 공간"
+name: "Samantha writer"
+title: "Samantha writer"
+description: "writer.samantha의 공간"
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/logo.png'
-baseurl: /creator
-google_analytics: 'G-CG3F4M45RC'
+baseurl: /blog
+google_analytics: 'G-62G444T2KR'
 disqus: 'http-samantha-writer-github-io'
 mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
 include: ["_pages"]
@@ -19,7 +19,7 @@ authors:
     avatar: 'assets/images/samantha_avator.jpeg'
     gravatar: b1cc14991db7a456fcd761680bbc8f81
     email: samantha.writer89@gmail.com
-    web: https://samantha-lee89.github.io/creator
+    web: https://samantha-writer.github.io/blog
     description: "This is the author box. Write a short description of the author here. You are currently previewing Mediumish demo, a Jekyll template compatible with Github pages."
   sal:
     name: Sal
