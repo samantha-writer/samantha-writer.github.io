@@ -4,6 +4,7 @@ layout: default
 <div class="row listrecent">
   
   {% assign category = page.category | default: page.title %}
+  <h2 id="{{ catetory | replace: " ","-" }}">카테고리 <span class="text-capitalize">{{ catetory }}</span></h2>
   {% for post in site.categories[category] %}
     {% include postbox.html %}
   {% endfor %}
