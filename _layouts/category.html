@@ -1,12 +1,12 @@
 ---
 layout: default
 ---
-
----
  <div class="row listrecent">
 
    {% assign category = page.category | default: page.title %}
-   {% for post in site.categories[category] %}	
+   
+  
+  {% for post in site.categories[category] %}	
       {% include postbox.html %}
     {% endfor %}
 
