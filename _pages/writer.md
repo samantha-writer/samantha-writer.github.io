@@ -1,5 +1,5 @@
 ---
 layout: category
-title: 크리에이터의일기
-permalink: /크리에이터의일기 
+title: 콘텐츠 라이터
+permalink: /콘텐츠라이터
 ---
