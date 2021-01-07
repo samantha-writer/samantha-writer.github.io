@@ -3,6 +3,7 @@ layout: page
 title: about Samantha
 permalink: /about
 comments: false
+published: true
 ---
 
 <div class="row justify-content-between">
