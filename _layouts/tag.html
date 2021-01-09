@@ -5,7 +5,7 @@ layout: default
 
    {% assign tag = page.tag | default: page.title %}
    <div class="section-title col-md-12 mt-4">
-    <h2 id="{{ tag | replace: " ","-" }}">카테고리 <span class="text-capitalize">{{ tag }}</span></h2>
+    <h2 id="{{ tag | replace: " ","-" }}">카테고리 | <span class="text-capitalize">{{ tag }}</span></h2>
   </div>
    {% for post in site.tags[tag] %}	
       {% include postbox.html %}
