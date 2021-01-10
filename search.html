@@ -1,0 +1,58 @@
+---
+layout: default
+title: 검색결과
+permalink: /search/
+---
+    <div class="category-index">
+        {% for category in site.categories %}
+        {% assign nposts = category | last | size %}
+        <div class="row listrecent collection" data-name="{{ category | first | escape }}">
+            <div class="section-title col-md-12 mt-4">
+                <h2>Tag | <span class="text-capitalize">{{ category |first}}</span></h2>
+            </div>
+                {% for posts in category %}
+                {% for post in posts %}
+                {% comment %}
+                I'm not sure why I need to check for the title, I think because the
+                category is itself part of the posts list for some reason.
+                {% endcomment %}
+                {% if post.title %}
+                {% include postbox.html %}
+                {% endif %}
+                {% endfor %}
+                {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="tag-index">
+        {% for tag in site.tags %}
+        {% assign nposts = tag | last | size %}
+
+        <div class="row listrecent collection" data-name="{{ tag | first | escape }}">
+            <div class="section-title col-md-12 mt-4">
+                <h2>Tag | <span class="text-capitalize">{{ tag |first}}</span></h2>
+            </div>
+            {% for posts in tag %}
+            {% for post in posts %}
+            {% comment %}
+            I'm not sure why I need to check for the title, I think because the
+            tag is itself part of the posts list for some reason.
+            {% endcomment %}
+            {% if post.title %}
+            {% include postbox.html %}
+            {% endif %}
+            {% endfor %}
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+    <div class="error" style="display:none;">
+        <header>
+            <h1>Error</h1>
+        </header>
+        <p class="too-few-parameters">You didn't specify any search parameters.</p>
+        <p class="too-many-parameters">You specified too many search parameters.</p>
+        <p class="no-results">There were no results found for your query.</p>
+        <p><a href="/blog/">Return to the post index</a> and try again.</p>
+    </div>
