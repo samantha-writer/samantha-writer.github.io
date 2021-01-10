@@ -10,6 +10,7 @@ disqus: 'http-samantha-writer-github-io'
 mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
 include: ["_pages"]
 permalink: /:title/
+menu_list: ['소식','콘텐츠라이터','생산적글쓰기','좋은글쓰기','리뷰']
 
 # Authors
 authors:
@@ -22,7 +23,6 @@ authors:
     web: /blog/about
     instagram: https://www.instagram.com/samantha.writer
     description: "7년차 글쟁이. 경제지와 뉴미디어에서 기자로 일하다, 현재 IT 기업에서 인공지능 콘텐츠를 쓰고 있다. 취미로 생산성 앱을 활용한 글쓰기 프로세스를 연구한다."
-
 # Plugins
 plugins:
   - jekyll-paginate
