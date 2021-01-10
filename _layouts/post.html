@@ -24,14 +24,15 @@ post_class: -templatepost
                 <!-- Post Categories -->
                 <div class="after-post-cats">
                     <ul class="tags mb-4">
+                        {%if page.categories != null %}
                         <i class="fas fa-fw fa-folder-open" aria-hidden="true"  style="font-size: large"></i>
-
                         {% assign sortedCategories = page.categories | sort %}
                         {% for category in sortedCategories %}
                         <li>
-                            <a class="smoothscroll" href="{{site.baseurl}}/categories#{{ category | replace: " ","-" }}">{{ category }}</a>
+                            <a class="smoothscroll" href="{{site.baseurl}}/{{ category | replace: " ","-" }}">{{ category }}</a>
                         </li>
                         {% endfor %}
+                        {% endif %}
                     </ul>
                 </div>
                 <!-- End Categories -->
@@ -95,13 +96,15 @@ post_class: -templatepost
             </br>
             <div class="after-post-tags">
                 <ul class="tags">
+                    {%if page.tags != null %}
                     <i class="fas fa-fw fa-tags" aria-hidden="true" style="font-size: large"></i>
                     {% assign sortedTags = page.tags | sort %}
                     {% for tag in sortedTags %}
                     <li>
-                        <a class="smoothscroll" href="{{site.baseurl}}/tags#{{ tag | replace: " ","-" }}">#{{ tag }}</a>
+                        <a class="smoothscroll" href="{{site.baseurl}}/search/?tag={{ tag | replace: " ","-" }}">#{{ tag }}</a>
                     </li>
                     {% endfor %}
+                    {% endif %}
                 </ul>
             </div>
             <!-- End Tags -->
