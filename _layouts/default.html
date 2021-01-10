@@ -17,6 +17,7 @@
 <link href="{{ site.baseurl }}/assets/css/main.css" rel="stylesheet">
 
 <script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
+<script src="{{ site.baseurl }}/assets/js/alexpearce.js" charset="utf-8"></script>
 
 <!-- change your GA id in _config.yml -->
 <!— Global site tag (gtag.js) - Google Analytics —>
@@ -175,7 +176,7 @@
             {% assign tag_list_size = site.tags | size %}
             {% if tag_list.first[0] != null %}
             {% for tag in tag_list %}
-            <a class="mt-1 mb-1" href="{{site.baseurl}}/tags#{{ tag[0] | url_escape | strip | replace: ' ', '-' }}">{{ tag[0] | camelcase }} ({{ tag[1].size }})</a>
+            <a class="mt-1 mb-1" href="{{site.baseurl}}/search/?tag={{ tag[0] | url_escape | strip | replace: ' ', '-' }}">{{ tag[0] | camelcase }} ({{ tag[1].size }})</a>
             {% endfor %}
             {% endif %}
             {% assign tag_list = nil %}
