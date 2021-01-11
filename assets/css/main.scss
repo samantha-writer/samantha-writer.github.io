@@ -8,6 +8,12 @@
 	display:inline;
 }
 
+/*유튜브 iframe class */
+.youtube{
+    width: 100%;
+    height: 100%;
+}
+
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
 	"syntax",
