@@ -23,12 +23,32 @@
 <!— Global site tag (gtag.js) - Google Analytics —>
 <script async src="https://www.googletagmanager.com/gtag/js?id={{site.google_analytics}}"></script>
 	
+<!-- 사이트 관리자 등록 -->
 <meta name="google-site-verification" content="wjM0-ayVnmSnH6JrvoDSaK75Yy8x0y8RBJpuF3JaO9E" />
 	
 <meta name="naver-site-verification" content="78c9567479b377dbea282cfed8b87c54bcfc95a8" />
+
+<!-- Facebook Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '395648901526529');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=395648901526529&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
 	
 <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/feed.xml" title="{{ site.title }} Feed">
-
+	
+	
 </head>
 
 {% if jekyll.environment == 'production' %}
