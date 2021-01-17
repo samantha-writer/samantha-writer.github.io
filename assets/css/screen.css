@@ -412,7 +412,6 @@ blockquote {
     }
 
     #comments {
-        margin-right: 15px;
     }
 
     .jumbotron.fortags {
@@ -672,7 +671,6 @@ ul.tags li a:hover {
 }
 
 #comments {
-    margin-top: 3rem;
     margin-bottom: 1.5rem;
 }
 
