@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://samantha-writer.github.io/blog/sitemap.xml
+Sitemap: https://samantha-writer.github.io/sitemap.xml
