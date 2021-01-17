@@ -9,7 +9,7 @@ google_analytics: 'G-62G444T2KR'
 disqus: 'http-samantha-writer-github-io'
 mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
 include: ["_pages"]
-permalink: /:title/
+permalink: /blog/:title/
 menu_list: ['소식','콘텐츠라이터','생산적글쓰기','좋은글쓰기','리뷰']
 
 # Authors
