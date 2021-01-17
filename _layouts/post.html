@@ -118,7 +118,7 @@ post_class: -templatepost
                         이전 글
                     </div>
                     <div style="text-align: left; ">
-                         <a href="{{ site.baseurl }}/{{page.previous.url}}"> &laquo; {{page.previous.title}}</a>
+                         <a href="{{ site.baseurl }}{{page.previous.url}}"> &laquo; {{page.previous.title}}</a>
                     </div>
                     {% endif %}
                 </div>
@@ -128,7 +128,7 @@ post_class: -templatepost
                         다음 글
                     </div>
                     <div  style="text-align: right; ">
-                         <a href="{{ site.baseurl }}/{{page.next.url}}">{{page.next.title}} &raquo; </a>
+                         <a href="{{ site.baseurl }}{{page.next.url}}">{{page.next.title}} &raquo; </a>
                     </div>
                     {% endif %}
                 </div>
