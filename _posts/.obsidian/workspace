@@ -1,16 +1,16 @@
 {
   "main": {
-    "id": "075ec63781835ea7",
+    "id": "0415aaed9c26ec1a",
     "type": "split",
     "children": [
       {
-        "id": "0e102a60a0f118c1",
+        "id": "fc042b9f93501b6d",
         "type": "leaf",
         "active": true,
         "state": {
           "type": "markdown",
           "state": {
-            "file": "2015-04-19-150419.md",
+            "file": "2021-01-14-210114.md",
             "mode": "preview"
           }
         }
@@ -19,15 +19,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "b5d824348b8e8204",
+    "id": "fe60ec917f3f2de6",
     "type": "split",
     "children": [
       {
-        "id": "bfbe69d7b8c33d7c",
+        "id": "ae680008725e9350",
         "type": "tabs",
         "children": [
           {
-            "id": "fb847a7843bb1f70",
+            "id": "ca768d8188134084",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -35,7 +35,7 @@
             }
           },
           {
-            "id": "55b9cfc461e7fc22",
+            "id": "6ee08641570278a1",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -43,7 +43,7 @@
                 "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
-                "collapseAll": false,
+                "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
               }
@@ -56,21 +56,25 @@
     "width": 300
   },
   "right": {
-    "id": "a4917b9101b37667",
+    "id": "ebf9eeea9d19c542",
     "type": "split",
     "children": [
       {
-        "id": "10ee6070933c55bc",
+        "id": "26feef384766e09a",
         "type": "tabs",
         "children": [
           {
-            "id": "61d1c43cfc1ee9f1",
+            "id": "5bbe5654f98a9544",
             "type": "leaf",
             "state": {
-              "type": "tag",
+              "type": "backlink",
               "state": {
-                "sortOrder": "frequency",
-                "useHierarchy": true
+                "file": "2021-01-14-210114.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
               }
             }
           }
@@ -82,6 +86,15 @@
     "collapsed": true
   },
   "lastOpenFiles": [
-    "2015-04-19-150419.md"
+    "2020-12-04-201204.md",
+    "2020-12-04-201204-2.md",
+    "2020-12-07-201207.md",
+    "2020-12-09-201209.md",
+    "2020-12-10-201210.md",
+    "2020-12-22-201222.md",
+    "2020-12-18-201218.md",
+    "2020-12-15-201215.md",
+    "2020-12-23-201223.md",
+    "2021-01-14-210114.md"
   ]
 }
