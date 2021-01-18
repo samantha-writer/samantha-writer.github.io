@@ -1,26 +1,17 @@
 {
   "main": {
-    "id": "0415aaed9c26ec1a",
+    "id": "075ec63781835ea7",
     "type": "split",
     "children": [
       {
-<<<<<<< HEAD
-        "id": "83f3f00caea1a3ee",
-=======
-        "id": "fc042b9f93501b6d",
->>>>>>> 51858e5828001ed9c20d4ee09ca47a25d28b7a3b
+        "id": "0e102a60a0f118c1",
         "type": "leaf",
         "active": true,
         "state": {
           "type": "markdown",
           "state": {
-<<<<<<< HEAD
-            "file": "2020-12-04-201204.md",
-            "mode": "source"
-=======
-            "file": "2021-01-14-210114.md",
+            "file": "2015-04-19-150419.md",
             "mode": "preview"
->>>>>>> 51858e5828001ed9c20d4ee09ca47a25d28b7a3b
           }
         }
       }
@@ -28,15 +19,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "fe60ec917f3f2de6",
+    "id": "b5d824348b8e8204",
     "type": "split",
     "children": [
       {
-        "id": "ae680008725e9350",
+        "id": "bfbe69d7b8c33d7c",
         "type": "tabs",
         "children": [
           {
-            "id": "ca768d8188134084",
+            "id": "fb847a7843bb1f70",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -44,7 +35,7 @@
             }
           },
           {
-            "id": "6ee08641570278a1",
+            "id": "55b9cfc461e7fc22",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -52,7 +43,7 @@
                 "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
-                "collapseAll": true,
+                "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
               }
@@ -65,29 +56,21 @@
     "width": 300
   },
   "right": {
-    "id": "ebf9eeea9d19c542",
+    "id": "a4917b9101b37667",
     "type": "split",
     "children": [
       {
-        "id": "26feef384766e09a",
+        "id": "10ee6070933c55bc",
         "type": "tabs",
         "children": [
           {
-            "id": "5bbe5654f98a9544",
+            "id": "61d1c43cfc1ee9f1",
             "type": "leaf",
             "state": {
-              "type": "backlink",
+              "type": "tag",
               "state": {
-<<<<<<< HEAD
-                "file": "2020-12-04-201204.md",
-=======
-                "file": "2021-01-14-210114.md",
->>>>>>> 51858e5828001ed9c20d4ee09ca47a25d28b7a3b
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical",
-                "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
+                "sortOrder": "frequency",
+                "useHierarchy": true
               }
             }
           }
@@ -99,28 +82,6 @@
     "collapsed": true
   },
   "lastOpenFiles": [
-<<<<<<< HEAD
-    "2020-12-04-201204.md",
-    "2020-12-04-201204-2.md",
-    "2020-12-07-201207.md",
-    "2020-12-09-201209.md",
-    "2020-12-10-201210.md",
-    "2020-12-22-201222.md",
-    "2020-12-18-201218.md",
-    "2020-12-15-201215.md",
-    "2020-12-23-201223.md",
-    "2021-01-14-210114.md"
-=======
-    "2021-01-14-210114.md",
-    "2021-01-13-210113.md",
-    "2021-01-11-210111.md",
-    "2021-01-10-210110.md",
-    "2021-01-06-210106.md",
-    "2020-12-23-201223.md",
-    "2020-12-22-201222.md",
-    "2020-12-18-201218.md",
-    "2020-12-15-201215.md",
-    "2020-12-14-201214.md"
->>>>>>> 51858e5828001ed9c20d4ee09ca47a25d28b7a3b
+    "2015-04-19-150419.md"
   ]
 }
