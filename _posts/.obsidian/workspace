@@ -1,0 +1,100 @@
+{
+  "main": {
+    "id": "0415aaed9c26ec1a",
+    "type": "split",
+    "children": [
+      {
+        "id": "83f3f00caea1a3ee",
+        "type": "leaf",
+        "active": true,
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "2020-12-04-201204.md",
+            "mode": "source"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "fe60ec917f3f2de6",
+    "type": "split",
+    "children": [
+      {
+        "id": "ae680008725e9350",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ca768d8188134084",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "6ee08641570278a1",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": true,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "ebf9eeea9d19c542",
+    "type": "split",
+    "children": [
+      {
+        "id": "26feef384766e09a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5bbe5654f98a9544",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "2020-12-04-201204.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "lastOpenFiles": [
+    "2020-12-04-201204.md",
+    "2020-12-04-201204-2.md",
+    "2020-12-07-201207.md",
+    "2020-12-09-201209.md",
+    "2020-12-10-201210.md",
+    "2020-12-22-201222.md",
+    "2020-12-18-201218.md",
+    "2020-12-15-201215.md",
+    "2020-12-23-201223.md",
+    "2021-01-14-210114.md"
+  ]
+}
