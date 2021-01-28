@@ -40,7 +40,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#아이디어수집",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
