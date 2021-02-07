@@ -21,16 +21,31 @@ var documents = [{% for page in site.pages %}{% if page.url contains '.xml' or p
     "body": "{{ page.date | date: "%Y/%m/%d" }} - {{ page.content | markdownify | replace: '.', '. ' | replace: '</h2>', ': ' | replace: '</h3>', ': ' | replace: '</h4>', ': ' | replace: '</p>', ' ' | strip_html | strip_newlines | replace: '  ', ' ' | replace: '"', ' ' }}"{% assign counter = counter | plus: 1 %}
     }{% if forloop.last %}{% else %}, {% endif %}{% endfor %}];
 
-var idx = lunr(function () {
-    this.ref('id')
-    this.field('title')
-    this.field('body')
+function trimmerEnKo(token) {
+    token.str = token.str
+        .replace(/^[^\w가-힣]+/, '')
+        .replace(/[^\w가-힣]+$/, '');
+    return token
+};
 
-    documents.forEach(function (doc) {
-        this.add(doc)
-    }, this)
-});
 function lunr_search(term) {
+
+    var idx = lunr(function () {
+        this.ref('id')
+        this.field('title')
+        this.field('body')
+
+        this.pipeline.reset()
+        this.pipeline.add(
+            trimmerEnKo,
+            lunr.stopWordFilter,
+            lunr.stemmer
+        );
+        documents.forEach(function (doc) {
+            console.log(doc)
+            this.add(doc)
+        }, this)
+    });
     document.getElementById('lunrsearchresults').innerHTML = '<ul></ul>';
     if(term) {
         document.getElementById('lunrsearchresults').innerHTML = "<p>Search results for '" + term + "'</p>" + document.getElementById('lunrsearchresults').innerHTML;
@@ -55,6 +70,24 @@ function lunr_search(term) {
 }
 
 function lunr_search(term) {
+
+    var idx = lunr(function () {
+        this.ref('id')
+        this.field('title')
+        this.field('body')
+
+        this.pipeline.reset()
+        this.pipeline.add(
+            trimmerEnKo,
+            lunr.stopWordFilter,
+            lunr.stemmer
+        );
+        documents.forEach(function (doc) {
+            console.log(doc)
+            this.add(doc)
+        }, this)
+    });
+
     $('#lunrsearchresults').show( 400 );
     $( "body" ).addClass( "modal-open" );
     
