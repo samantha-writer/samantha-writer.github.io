@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+
+# Obsidian
+.obsidian/
+
+# Jekyll build
+_site/
+.jekyll-cache/
+.jekyll-metadata
+
+# Ruby
+Gemfile.lock
+
+# Editor
+*.swp
+*.swo
+*~
