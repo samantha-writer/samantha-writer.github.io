@@ -7,6 +7,9 @@ source "https://rubygems.org"
 #     bundle exec jekyll serve
 #
 
+# Jekyll version
+gem "jekyll", "~> 4.3"
+
 # If you have any plugins, put them here!
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 group :jekyll_plugins do
@@ -14,8 +17,10 @@ group :jekyll_plugins do
     gem 'jekyll-sitemap'
     gem 'jekyll-paginate'
     gem 'jekyll-seo-tag'
-    gem 'kramdown'
-    gem 'rouge'
+    gem 'jekyll-archives'  # 날짜별/카테고리별 아카이브
 end
 
-gem "webrick", "~> 1.7"
+# Additional dependencies
+gem "webrick", "~> 1.8"
+gem "kramdown-parser-gfm"  # GitHub Flavored Markdown
+gem "rouge", "~> 4.0"  # Syntax highlighting

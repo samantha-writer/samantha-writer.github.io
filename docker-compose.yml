@@ -1,7 +1,17 @@
-jekyll:
-    image: jekyll/jekyll:latest
-    command: jekyll serve --force_polling
+version: '3.8'
+services:
+  jekyll:
+    image: jekyll/jekyll:4.3
+    command: jekyll serve --livereload --force_polling --drafts
     ports:
-        - 4000:4000
+      - "4000:4000"
+      - "35729:35729"  # LiveReload port
     volumes:
-        - .:/srv/jekyll
+      - .:/srv/jekyll
+      - bundle_cache:/usr/local/bundle
+    environment:
+      - JEKYLL_ENV=development
+      - BUNDLE_PATH=/usr/local/bundle
+
+volumes:
+  bundle_cache:

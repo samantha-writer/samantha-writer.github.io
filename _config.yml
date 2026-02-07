@@ -1,7 +1,9 @@
 # Site
 name: "Samantha Lee"
 title: "Samantha writer"
-description: ""
+description: "7년차 콘텐츠 라이터 사만다의 글쓰기 블로그. AI 콘텐츠, 생산성, 기자 커리어 이야기를 다룹니다."
+url: "https://samantha-writer.github.io"
+baseurl: ""
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/logo.png'
 google_analytics: 'G-62G444T2KR'
@@ -28,6 +30,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-archives
 # Pagination 
 paginate: 9
 paginate_path: /page:num/
@@ -48,6 +51,16 @@ adsense-data-ad-client: "ca-pub-3412143450191416"
 adsense-data-ad-slot: "1363087678"
 
 # Lazy Images ("enabled" or "disabled")
-lazyimages: "disabled"
+lazyimages: "enabled"
 
-exclude: [changelog.md, LICENSE.txt, README.md, Gemfile, Gemfile.lock]
+exclude: [changelog.md, LICENSE.txt, README.md, Gemfile, Gemfile.lock, vendor, .bundle]
+
+# Jekyll Archives (새로 추가)
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layout: archive
+  permalinks:
+    category: '/category/:name/'
+    tag: '/tag/:name/'
