@@ -1,0 +1,19 @@
+{% comment %}
+  Picture element with WebP support
+  Usage: {% include picture.html path="assets/images/inpost/image.jpg" alt="Description" %}
+{% endcomment %}
+
+{% assign img_path = include.path %}
+{% assign img_alt = include.alt | default: "" %}
+{% assign img_class = include.class | default: "" %}
+{% assign webp_path = img_path | replace: ".jpg", ".webp" | replace: ".jpeg", ".webp" | replace: ".png", ".webp" %}
+
+<picture>
+  <source srcset="{{ site.baseurl }}/{{ webp_path }}" type="image/webp">
+  <source srcset="{{ site.baseurl }}/{{ img_path }}" type="image/{{ img_path | split: '.' | last }}">
+  <img src="{{ site.baseurl }}/{{ img_path }}"
+       alt="{{ img_alt }}"
+       class="{{ img_class }}"
+       loading="lazy"
+       decoding="async">
+</picture>

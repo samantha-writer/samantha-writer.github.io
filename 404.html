@@ -1,10 +1,172 @@
 ---
 layout: default
-title: 404
+title: 404 - Page Not Found
+description: "페이지를 찾을 수 없습니다"
 permalink: /404.html
 ---
 
-<div class="text-center">
-<h1 class="display-1 mt-5 mb-4"><span class="badge badge-danger">404</span> Page does not exist!</h1>
-<p>Please use the search bar at the top or visit our <a href="{{site.baseurl}}/">homepage</a>!</p>
+<style>
+.error-404 {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+.error-404-content {
+    text-align: center;
+    max-width: 600px;
+}
+
+.error-404-title {
+    font-size: 8rem;
+    font-weight: bold;
+    color: var(--text-color);
+    opacity: 0.3;
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+
+.error-404-subtitle {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+.error-404-message {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.error-404-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.error-404-btn {
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-primary-404 {
+    background: var(--link-color);
+    color: white;
+}
+
+.btn-primary-404:hover {
+    background: var(--link-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+    color: white;
+}
+
+.btn-secondary-404 {
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    color: var(--text-color);
+}
+
+.btn-secondary-404:hover {
+    border-color: var(--link-color);
+    color: var(--link-color);
+    transform: translateY(-2px);
+}
+
+.recent-posts-404 {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--border-color);
+}
+
+.recent-posts-404 h3 {
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+.recent-posts-404 ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.recent-posts-404 li {
+    margin-bottom: 0.75rem;
+}
+
+.recent-posts-404 a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.recent-posts-404 a:hover {
+    color: var(--link-hover);
+}
+
+@media (max-width: 768px) {
+    .error-404-title {
+        font-size: 5rem;
+    }
+
+    .error-404-subtitle {
+        font-size: 1.5rem;
+    }
+}
+</style>
+
+<div class="error-404">
+    <div class="error-404-content">
+        <div class="error-404-title">404</div>
+        <h1 class="error-404-subtitle">페이지를 찾을 수 없습니다</h1>
+        <p class="error-404-message">
+            죄송합니다. 요청하신 페이지가 존재하지 않거나 이동되었을 수 있습니다.<br>
+            아래 버튼을 통해 원하시는 콘텐츠를 찾아보세요.
+        </p>
+
+        <div class="error-404-actions">
+            <a href="{{ site.baseurl }}/" class="error-404-btn btn-primary-404">
+                🏠 홈으로 가기
+            </a>
+            <a href="{{ site.baseurl }}/search" class="error-404-btn btn-secondary-404">
+                🔍 검색하기
+            </a>
+            <a href="{{ site.baseurl }}/categories" class="error-404-btn btn-secondary-404">
+                📚 카테고리 보기
+            </a>
+        </div>
+
+        <div class="recent-posts-404">
+            <h3>최근 게시물</h3>
+            <ul>
+                {% for post in site.posts limit:5 %}
+                <li>
+                    <a href="{{ site.baseurl }}{{ post.url }}">
+                        {{ post.title }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
 </div>
+
+<script>
+  // Track 404 errors in Google Analytics
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'page_view', {
+      'page_title': '404 - Page Not Found',
+      'page_location': window.location.href,
+      'page_path': window.location.pathname
+    });
+  }
+</script>

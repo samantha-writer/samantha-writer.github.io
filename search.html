@@ -1,58 +1,339 @@
 ---
 layout: default
-title: 검색결과
+title: 검색
+description: "블로그 콘텐츠를 검색하세요"
 permalink: /search/
 ---
-    <div class="category-index">
-        {% for category in site.categories %}
-        {% assign nposts = category | last | size %}
-        <div class="row listrecent collection" data-name="{{ category | first | escape }}">
-            <div class="section-title col-md-12 mt-4">
-                <h2>Tag | <span class="text-capitalize">{{ category |first}}</span></h2>
-            </div>
-                {% for posts in category %}
-                {% for post in posts %}
-                {% comment %}
-                I'm not sure why I need to check for the title, I think because the
-                category is itself part of the posts list for some reason.
-                {% endcomment %}
-                {% if post.title %}
-                {% include postbox.html %}
-                {% endif %}
-                {% endfor %}
-                {% endfor %}
+
+<style>
+.search-page {
+    padding: 2rem 0;
+}
+
+.search-box-container {
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    text-align: center;
+}
+
+.search-box-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.search-box-container p {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.search-input-wrapper {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.search-input {
+    width: 100%;
+    padding: 1rem 3rem 1rem 1.5rem;
+    font-size: 1.1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    background: var(--card-bg);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--link-color);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.search-icon {
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.3rem;
+    color: var(--text-secondary);
+    pointer-events: none;
+}
+
+.search-stats {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+}
+
+.search-results {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.no-results {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--text-secondary);
+}
+
+.no-results-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+.search-filters {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    justify-content: center;
+}
+
+.filter-btn {
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--border-color);
+    background: var(--card-bg);
+    color: var(--text-color);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+}
+
+.filter-btn:hover {
+    border-color: var(--link-color);
+    color: var(--link-color);
+}
+
+.filter-btn.active {
+    background: var(--link-color);
+    border-color: var(--link-color);
+    color: white;
+}
+
+.search-result-item {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background: var(--card-bg);
+    transition: all 0.3s ease;
+}
+
+.search-result-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: var(--link-color);
+}
+
+.search-result-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.search-result-title a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.search-result-title a:hover {
+    color: var(--link-color);
+}
+
+.search-result-meta {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+}
+
+.search-result-excerpt {
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.search-result-tags {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.search-result-tag {
+    padding: 0.25rem 0.75rem;
+    background: var(--code-bg);
+    border-radius: 12px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+mark {
+    background-color: rgba(255, 235, 59, 0.5);
+    padding: 0 0.2em;
+    border-radius: 2px;
+}
+
+[data-theme="dark"] mark {
+    background-color: rgba(255, 235, 59, 0.3);
+}
+</style>
+
+<div class="search-page">
+    <div class="search-box-container">
+        <h1>🔍 검색</h1>
+        <p>원하시는 콘텐츠를 검색해보세요</p>
+
+        <div class="search-input-wrapper">
+            <input type="text"
+                   id="searchInput"
+                   class="search-input"
+                   placeholder="검색어를 입력하세요..."
+                   autocomplete="off">
+            <span class="search-icon">🔎</span>
         </div>
-        {% endfor %}
+
+        <div class="search-filters">
+            <button class="filter-btn active" data-filter="all">전체</button>
+            {% for category in site.menu_list %}
+            <button class="filter-btn" data-filter="{{ category }}">{{ category }}</button>
+            {% endfor %}
+        </div>
     </div>
 
-    <div class="tag-index">
-        {% for tag in site.tags %}
-        {% assign nposts = tag | last | size %}
+    <div id="searchStats" class="search-stats" style="display:none;"></div>
 
-        <div class="row listrecent collection" data-name="{{ tag | first | escape }}">
-            <div class="section-title col-md-12 mt-4">
-                <h2>Tag | <span class="text-capitalize">{{ tag |first}}</span></h2>
-            </div>
-            {% for posts in tag %}
-            {% for post in posts %}
-            {% comment %}
-            I'm not sure why I need to check for the title, I think because the
-            tag is itself part of the posts list for some reason.
-            {% endcomment %}
-            {% if post.title %}
-            {% include postbox.html %}
-            {% endif %}
-            {% endfor %}
-            {% endfor %}
-        </div>
-        {% endfor %}
+    <div id="searchResults" class="search-results"></div>
+
+    <div id="noResults" class="no-results" style="display:none;">
+        <div class="no-results-icon">📭</div>
+        <h3>검색 결과가 없습니다</h3>
+        <p>다른 검색어로 시도해보세요</p>
     </div>
-    <div class="error" style="display:none;">
-        <header>
-            <h1>Error</h1>
-        </header>
-        <p class="too-few-parameters">You didn't specify any search parameters.</p>
-        <p class="too-many-parameters">You specified too many search parameters.</p>
-        <p class="no-results">There were no results found for your query.</p>
-        <p><a href="/">Return to the post index</a> and try again.</p>
-    </div>
+</div>
+
+<script>
+// Search data
+const posts = [
+    {% for post in site.posts %}
+    {
+        title: {{ post.title | jsonify }},
+        url: "{{ site.baseurl }}{{ post.url }}",
+        date: "{{ post.date | date: '%Y년 %m월 %d일' }}",
+        categories: {{ post.categories | jsonify }},
+        tags: {{ post.tags | jsonify }},
+        excerpt: {{ post.excerpt | strip_html | strip_newlines | jsonify }},
+        content: {{ post.content | strip_html | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+];
+
+// DOM elements
+const searchInput = document.getElementById('searchInput');
+const searchResults = document.getElementById('searchResults');
+const searchStats = document.getElementById('searchStats');
+const noResults = document.getElementById('noResults');
+const filterBtns = document.querySelectorAll('.filter-btn');
+
+let currentFilter = 'all';
+let searchTimeout;
+
+// Search function
+function search(query) {
+    const lowerQuery = query.toLowerCase();
+
+    if (!query || query.trim().length < 2) {
+        searchResults.innerHTML = '';
+        searchStats.style.display = 'none';
+        noResults.style.display = 'none';
+        return;
+    }
+
+    let results = posts.filter(post => {
+        // Filter by category
+        if (currentFilter !== 'all' && !post.categories.includes(currentFilter)) {
+            return false;
+        }
+
+        // Search in title, content, tags
+        return post.title.toLowerCase().includes(lowerQuery) ||
+               post.content.toLowerCase().includes(lowerQuery) ||
+               post.tags.some(tag => tag.toLowerCase().includes(lowerQuery));
+    });
+
+    // Display results
+    if (results.length === 0) {
+        searchResults.innerHTML = '';
+        searchStats.style.display = 'none';
+        noResults.style.display = 'block';
+    } else {
+        noResults.style.display = 'none';
+        searchStats.style.display = 'block';
+        searchStats.textContent = `${results.length}개의 결과를 찾았습니다`;
+
+        searchResults.innerHTML = results.map(post => {
+            const highlightedTitle = highlightText(post.title, query);
+            const highlightedExcerpt = highlightText(post.excerpt.substring(0, 200), query);
+
+            return `
+                <div class="search-result-item">
+                    <h2 class="search-result-title">
+                        <a href="${post.url}">${highlightedTitle}</a>
+                    </h2>
+                    <div class="search-result-meta">
+                        ${post.date} · ${post.categories.join(', ')}
+                    </div>
+                    <div class="search-result-excerpt">
+                        ${highlightedExcerpt}...
+                    </div>
+                    ${post.tags.length > 0 ? `
+                        <div class="search-result-tags">
+                            ${post.tags.map(tag => `<span class="search-result-tag">#${tag}</span>`).join('')}
+                        </div>
+                    ` : ''}
+                </div>
+            `;
+        }).join('');
+    }
+}
+
+// Highlight search term
+function highlightText(text, query) {
+    if (!query) return text;
+    const regex = new RegExp(`(${query})`, 'gi');
+    return text.replace(regex, '<mark>$1</mark>');
+}
+
+// Event listeners
+searchInput.addEventListener('input', (e) => {
+    clearTimeout(searchTimeout);
+    searchTimeout = setTimeout(() => {
+        search(e.target.value);
+    }, 300);
+});
+
+filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentFilter = btn.dataset.filter;
+        search(searchInput.value);
+    });
+});
+
+// Check URL parameters
+const urlParams = new URLSearchParams(window.location.search);
+const tagParam = urlParams.get('tag');
+const qParam = urlParams.get('q');
+
+if (tagParam) {
+    searchInput.value = tagParam;
+    search(tagParam);
+} else if (qParam) {
+    searchInput.value = qParam;
+    search(qParam);
+}
+
+// Focus on search input
+searchInput.focus();
+</script>
