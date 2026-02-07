@@ -1,0 +1,8 @@
+<span class="reading-time post-date" title="Estimated read time"> ·
+  {% assign words = post.content | number_of_words | default: 200 %}
+  {% if words < 180 %}
+    1 min
+  {% else %}
+    {{ words | divided_by:180 }} mins
+  {% endif %}
+</span>

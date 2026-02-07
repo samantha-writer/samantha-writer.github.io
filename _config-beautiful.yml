@@ -1,0 +1,72 @@
+# Site settings
+title: Samantha Writer
+name: Samantha Lee
+description: 10년차 콘텐츠 라이터의 글쓰기, 커리어, 생산성 이야기
+
+# Your information
+author: Samantha Lee
+email: samantha.writer89@gmail.com
+timezone: Asia/Seoul
+
+# Site URL
+url: "https://samantha-writer.github.io"
+baseurl: ""
+
+# Social media
+social-network-links:
+  email: "samantha.writer89@gmail.com"
+  instagram: samantha.writer
+
+# Avatar
+avatar: "/assets/images/samantha_avator.jpg"
+
+# Navigation
+navbar-links:
+  소식: "소식"
+  콘텐츠라이터: "콘텐츠라이터"
+  생산적글쓰기: "생산적글쓰기"
+  좋은글쓰기: "좋은글쓰기"
+  리뷰: "리뷰"
+  About: "about"
+
+# Post settings
+excerpt_length: 50
+feed_show_excerpt: true
+feed_show_tags: true
+
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Pagination
+paginate: 9
+paginate_path: "/page:num/"
+
+# Markdown
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Analytics
+google_analytics: "G-62G444T2KR"
+
+# Comments
+disqus: "http-samantha-writer-github-io"
+
+# Build settings
+exclude:
+  - CHANGELOG.md
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .bundle
+  - node_modules
+
+# Output
+permalink: /blog/:title/

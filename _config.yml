@@ -1,29 +1,29 @@
 # Site
-name: "Samantha Lee"
-title: "Samantha writer"
-description: "10년차 콘텐츠 라이터 사만다의 글쓰기 블로그. AI 콘텐츠, 생산성, 기자 커리어 이야기를 다룹니다."
-url: "https://samantha-writer.github.io"
-baseurl: ""
+name: 'Samantha Writer'
+title: 'Samantha Writer'
+description: '10년차 콘텐츠 라이터 사만다의 글쓰기 블로그. AI 콘텐츠, 생산성, 기자 커리어 이야기를 다룹니다.'
 logo: 'assets/images/logo.png'
-favicon: 'assets/images/logo.png'
+favicon: 'assets/images/favicon.ico'
+baseurl: ''
+url: 'https://samantha-writer.github.io'
 google_analytics: 'G-62G444T2KR'
 disqus: 'http-samantha-writer-github-io'
-mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
+
 include: ["_pages"]
 permalink: /blog/:title
-menu_list: ['소식','콘텐츠라이터','생산적글쓰기','좋은글쓰기','리뷰']
 
 # Authors
 authors:
   samantha:
     name: Samantha
-    display_name: Samantha
+    display_name: Samantha Lee
     avatar: 'assets/images/samantha_avator.jpg'
     gravatar: b1cc14991db7a456fcd761680bbc8f81
     email: samantha.writer89@gmail.com
-    web: /about
+    web: https://samantha-writer.github.io
     instagram: https://www.instagram.com/samantha.writer
     description: "10년차 글쟁이. 경제지와 뉴미디어에서 기자로 일하다, 현재 IT 기업에서 인공지능 콘텐츠를 쓰고 있다. 취미로 생산성 앱을 활용한 글쓰기 프로세스를 연구한다."
+
 # Plugins
 plugins:
   - jekyll-paginate
@@ -31,36 +31,26 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-archives
-# Pagination 
-paginate: 9
+
+# Pagination
+paginate: 6
 paginate_path: /page:num/
-    
+
 # Other
 markdown: kramdown
 
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
-  syntax_highlighter_opts:
-    block:
-      line_numbers: true
-
-# Adsense (change to "enabled" to activate, also your client id and ad slot. Create a new ad unit from your Adsense account to get the slot.)
+# Adsense
 adsense: "disabled"
-adsense-data-ad-client: "ca-pub-3412143450191416"
-adsense-data-ad-slot: "1363087678"
 
-# Lazy Images ("enabled" or "disabled")
+# Lazy Images
 lazyimages: "enabled"
 
-exclude: [changelog.md, LICENSE.txt, README.md, Gemfile, Gemfile.lock, vendor, .bundle]
+exclude: [changelog.md, LICENSE.txt, README.md, Gemfile, Gemfile.lock, vendor, .bundle, .backups]
 
-# Jekyll Archives (새로 추가)
+# Jekyll Archives
 jekyll-archives:
   enabled:
     - categories
-    - tags
   layout: archive
   permalinks:
     category: '/category/:name/'
-    tag: '/tag/:name/'
