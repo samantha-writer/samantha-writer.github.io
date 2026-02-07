@@ -1,7 +1,7 @@
 # Site
 name: "Samantha Lee"
 title: "Samantha writer"
-description: "7년차 콘텐츠 라이터 사만다의 글쓰기 블로그. AI 콘텐츠, 생산성, 기자 커리어 이야기를 다룹니다."
+description: "10년차 콘텐츠 라이터 사만다의 글쓰기 블로그. AI 콘텐츠, 생산성, 기자 커리어 이야기를 다룹니다."
 url: "https://samantha-writer.github.io"
 baseurl: ""
 logo: 'assets/images/logo.png'
@@ -23,7 +23,7 @@ authors:
     email: samantha.writer89@gmail.com
     web: /about
     instagram: https://www.instagram.com/samantha.writer
-    description: "7년차 글쟁이. 경제지와 뉴미디어에서 기자로 일하다, 현재 IT 기업에서 인공지능 콘텐츠를 쓰고 있다. 취미로 생산성 앱을 활용한 글쓰기 프로세스를 연구한다."
+    description: "10년차 글쟁이. 경제지와 뉴미디어에서 기자로 일하다, 현재 IT 기업에서 인공지능 콘텐츠를 쓰고 있다. 취미로 생산성 앱을 활용한 글쓰기 프로세스를 연구한다."
 # Plugins
 plugins:
   - jekyll-paginate
