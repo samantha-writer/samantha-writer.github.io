@@ -4,7 +4,7 @@
 	<a class="text-dark" href="{{site.baseurl}}{{post.url}}">{{ post.title }}</a>
 	</h2>
 	<p class="excerpt">
-	   {{ post.excerpt  | strip_html | strip_newlines | truncate: 186}}
+	   {% if post.description %}{{ post.description }}{% else %}{{ post.excerpt  | strip_html | strip_newlines | truncate: 186}}{% endif %}
 	</p>
 	<small class="d-block text-muted">
 		In <span class="catlist">
