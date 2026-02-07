@@ -2,14 +2,27 @@
 layout: default
 published: true
 ---
- <div class="row listrecent">
+<div class="container">
 
-   {% assign category = page.category | default: page.title %}
-   <div class="section-title col-md-12 mt-4">
-    <h2 id="{{ category | replace: " ","-" }}">카테고리 | <span class="text-capitalize">{{ category }}</span></h2>
+  <div class="row mt-3">
+
+    <div class="col-md-8 main-loop">
+
+        {% assign category = page.category | default: page.title %}
+        <h4 class="font-weight-bold spanborder"><span>{{ category }}</span></h4>
+
+        {% for post in site.posts %}
+          {% if post.categories contains category %}
+            {% include main-loop-card.html %}
+          {% endif %}
+        {% endfor %}
+
+    </div>
+
+    <div class="col-md-4">
+        {% include sidebar-featured.html %}
+    </div>
+
   </div>
-   {% for post in site.categories[category] %}	
-      {% include postbox.html %}
-    {% endfor %}
 
 </div>

@@ -1,0 +1,28 @@
+/* Custom CSS overrides */
+
+/* Remove drop cap (first letter) */
+article:first-letter {
+    float: none !important;
+    font-size: inherit !important;
+    line-height: inherit !important;
+    margin: 0 !important;
+    vertical-align: baseline !important;
+}
+
+/* Reduce article font size */
+article.article-post {
+    font-size: 1rem !important;
+    line-height: 1.7 !important;
+}
+
+article.article-post p {
+    font-size: 1rem !important;
+    margin-bottom: 1.5rem;
+}
+
+/* Better spacing */
+article.article-post h2, 
+article.article-post h3 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+}
