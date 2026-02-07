@@ -8,6 +8,24 @@
 
     {% seo %}
 
+    <!-- Additional SEO Meta Tags -->
+    {% if page.description %}
+    <meta name="description" content="{{ page.description }}">
+    <meta property="og:description" content="{{ page.description }}">
+    <meta name="twitter:description" content="{{ page.description }}">
+    {% endif %}
+
+    {% if page.image %}
+    <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/{{ page.image }}">
+    <meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}/{{ page.image }}">
+    <meta name="twitter:card" content="summary_large_image">
+    {% endif %}
+
+    <meta property="og:title" content="{{ page.title }} | {{ site.name }}">
+    <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+    <meta property="og:type" content="article">
+    <meta name="twitter:title" content="{{ page.title }} | {{ site.name }}">
+
     <link rel="shortcut icon" type="image/x-icon" href="{{site.baseurl}}/{{site.favicon}}">
 
     <!-- Font Awesome Icons -->
