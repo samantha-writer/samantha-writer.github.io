@@ -1,0 +1,32 @@
+<!-- DNS Prefetch & Preconnect -->
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//fonts.gstatic.com">
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+<link rel="dns-prefetch" href="//stackpath.bootstrapcdn.com">
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Preload critical assets -->
+<link rel="preload" href="{{ site.baseurl }}/assets/css/screen.css" as="style">
+<link rel="preload" href="{{ site.baseurl }}/assets/css/main.css" as="style">
+<link rel="preload" href="{{ site.baseurl }}/assets/js/jquery.min.js" as="script">
+
+<!-- Modern image formats support -->
+<script>
+  // Check WebP support
+  function supportsWebP() {
+    var elem = document.createElement('canvas');
+    if (!!(elem.getContext && elem.getContext('2d'))) {
+      return elem.toDataURL('image/webp').indexOf('data:image/webp') == 0;
+    }
+    return false;
+  }
+
+  if (supportsWebP()) {
+    document.documentElement.classList.add('webp');
+  } else {
+    document.documentElement.classList.add('no-webp');
+  }
+</script>

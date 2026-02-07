@@ -25,7 +25,6 @@
 }
 
 // Import partials from `sass_dir` (defaults to `_sass`)
-@import
-	"syntax",
-    "starsnonscss"
-;
+@use "syntax";
+@use "starsnonscss";
+@use "darkmode";
