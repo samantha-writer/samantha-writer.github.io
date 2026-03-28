@@ -11,11 +11,21 @@ published: true
         {% assign category = page.category | default: page.title %}
         <h4 class="font-weight-bold spanborder"><span>{{ category }}</span></h4>
 
+        <div id="category-posts">
+        {% assign idx = 0 %}
         {% for post in site.posts %}
           {% if post.categories contains category %}
-            {% include main-loop-card.html %}
+            <div class="post-item" data-index="{{ idx }}">
+              {% include main-loop-card.html %}
+            </div>
+            {% assign idx = idx | plus: 1 %}
           {% endif %}
         {% endfor %}
+        </div>
+
+        <div class="mt-5">
+          <ul class="pagination" id="category-pagination"></ul>
+        </div>
 
     </div>
 
@@ -26,3 +36,55 @@ published: true
   </div>
 
 </div>
+
+<script>
+(function() {
+  var perPage = 6;
+  var items = document.querySelectorAll('#category-posts .post-item');
+  var total = items.length;
+  var totalPages = Math.ceil(total / perPage);
+  var currentPage = 1;
+
+  function showPage(page) {
+    var start = (page - 1) * perPage;
+    var end = start + perPage;
+    items.forEach(function(el, i) {
+      el.style.display = (i >= start && i < end) ? '' : 'none';
+    });
+    renderPagination(page);
+    currentPage = page;
+  }
+
+  function renderPagination(page) {
+    if (totalPages <= 1) return;
+    var ul = document.getElementById('category-pagination');
+    ul.innerHTML = '';
+
+    var prev = document.createElement('li');
+    prev.className = 'page-item' + (page === 1 ? ' disabled' : '');
+    prev.innerHTML = '<a class="page-link" href="#">&laquo; Prev</a>';
+    if (page > 1) prev.querySelector('a').addEventListener('click', function(e) { e.preventDefault(); showPage(page - 1); });
+    ul.appendChild(prev);
+
+    for (var i = 1; i <= totalPages; i++) {
+      var li = document.createElement('li');
+      li.className = 'page-item' + (i === page ? ' disabled' : '');
+      li.innerHTML = '<a class="page-link" href="#">' + i + '</a>';
+      if (i !== page) {
+        (function(p) {
+          li.querySelector('a').addEventListener('click', function(e) { e.preventDefault(); showPage(p); });
+        })(i);
+      }
+      ul.appendChild(li);
+    }
+
+    var next = document.createElement('li');
+    next.className = 'page-item' + (page === totalPages ? ' disabled' : '');
+    next.innerHTML = '<a class="page-link" href="#">Next &raquo;</a>';
+    if (page < totalPages) next.querySelector('a').addEventListener('click', function(e) { e.preventDefault(); showPage(page + 1); });
+    ul.appendChild(next);
+  }
+
+  if (total > 0) showPage(1);
+})();
+</script>
