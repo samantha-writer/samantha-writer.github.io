@@ -1,7 +1,7 @@
 # Site
 name: 'Samantha Writer'
 title: 'Samantha Writer'
-description: '10년차 콘텐츠 라이터 사만다의 글쓰기 블로그. AI 콘텐츠, 생산성, 기자 커리어 이야기를 다룹니다.'
+description: '11년차 글쟁이 사만다의 블로그. 경제지와 뉴미디어에서 기자로, IT 기업에서 콘텐츠 라이터로 일하며 써온 글들.'
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/favicon.ico'
 baseurl: ''
@@ -22,7 +22,7 @@ authors:
     email: samantha.writer89@gmail.com
     web: https://samantha-writer.github.io
     instagram: https://www.instagram.com/samantha.writer
-    description: "10년차 글쟁이. 경제지와 뉴미디어에서 기자로 일하다, 현재 IT 기업에서 인공지능 콘텐츠를 쓰고 있다. 취미로 생산성 앱을 활용한 글쓰기 프로세스를 연구한다."
+    description: "11년차 글쟁이다. 경제지와 뉴미디어에서 기자로, IT 기업에서 인공지능 콘텐츠 라이터로 일했다. 자비스앤빌런즈에서는 브랜드 저널리스트로 시작해, 지금은 삼쩜삼 리서치랩에서 조세 정책에 관한 글을 쓰고 있다."
 
 # Plugins
 plugins:
@@ -51,6 +51,8 @@ exclude: [changelog.md, LICENSE.txt, README.md, Gemfile, Gemfile.lock, vendor, .
 jekyll-archives:
   enabled:
     - categories
+    - tags
   layout: archive
   permalinks:
     category: '/category/:name/'
+    tag: '/tag/:name/'

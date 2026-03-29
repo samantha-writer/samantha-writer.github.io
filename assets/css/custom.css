@@ -20,6 +20,19 @@ article.article-post p {
     margin-bottom: 1.5rem;
 }
 
+/* Tags page anchor scroll offset (fixed navbar compensation) */
+.tag-section {
+    scroll-margin-top: 80px;
+}
+
+/* Link preview cards (microlink.io) */
+.link-preview,
+[class*="microlink"] {
+    margin: 1.5rem 0 !important;
+    border-radius: 8px !important;
+    border: 1px solid #e9ecef !important;
+}
+
 /* Better spacing */
 article.article-post h2, 
 article.article-post h3 {

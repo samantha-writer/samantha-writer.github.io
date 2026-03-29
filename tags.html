@@ -7,19 +7,14 @@ permalink: /tags.html
   <div class="row mt-3">
     <div class="col-md-8 main-loop">
 
-      {% assign all_tags = site.posts | map: "tags" | join: "," | split: "," | map: "strip" | sort | uniq %}
-
-      {% for tag in all_tags %}
-        {% if tag != "" %}
-        <div id="{{ tag | downcase }}" class="mb-5">
-          <h4 class="font-weight-bold spanborder"><span># {{ tag }}</span></h4>
-          {% for post in site.posts %}
-            {% if post.tags contains tag %}
-              {% include main-loop-card.html %}
-            {% endif %}
+      {% assign sorted_tags = site.tags | sort %}
+      {% for tag in sorted_tags %}
+        <div id="{{ tag[0] | downcase }}" class="mb-5 tag-section">
+          <h4 class="font-weight-bold spanborder"><span># {{ tag[0] }}</span></h4>
+          {% for post in tag[1] %}
+            {% include main-loop-card.html %}
           {% endfor %}
         </div>
-        {% endif %}
       {% endfor %}
 
     </div>
